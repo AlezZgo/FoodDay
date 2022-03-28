@@ -1,5 +1,6 @@
 package com.example.funday.presentation.menu
 
+import MealAdapter
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.funday.core.BaseFragment
 import com.example.funday.databinding.FragmentMenuBinding
+import com.example.funday.domain.MealDomain
 
 class MenuFragment :
 BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
@@ -23,6 +25,28 @@ BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
 
         viewModel = ViewModelProvider(this, viewModelFactory)[MenuViewModel::class.java]
 
+        setUpAdapter()
+    }
+
+    private fun setUpAdapter() {
+        val adapter = MealAdapter()
+        binding.menuRecyclerView.adapter = adapter
+        adapter.submitList(
+            listOf(
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+            )
+        )
     }
 
 }
