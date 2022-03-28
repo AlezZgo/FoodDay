@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.example.funday.databinding.FragmentJokesBinding
 
 class FavouritesFragment : Fragment() {
 
@@ -13,7 +14,7 @@ class FavouritesFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        TODO("OnCreateView")
+        return FragmentJokesBinding.inflate(inflater,container,false).root
     }
 
 }
