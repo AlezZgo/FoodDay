@@ -5,17 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.funday.databinding.FragmentJokesBinding
-import com.example.funday.databinding.FragmentProfileBinding
+import com.example.funday.databinding.FragmentBasketBinding
 
-class FavouritesFragment : Fragment() {
+class BasketFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        return FragmentProfileBinding.inflate(inflater,container,false).root
+        return FragmentBasketBinding.inflate(inflater, container, false).root
     }
 
 }

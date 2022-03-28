@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_menu">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.funday.ui.jokes.JokesFragment"
-        android:label="@string/jokes"
-        tools:layout="@layout/fragment_jokes" />
+        android:id="@+id/navigation_menu"
+        android:name="com.example.funday.ui.menu.MenuFragment"
+        android:label="@string/menu"
+        tools:layout="@layout/fragment_menu" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_profile"
         android:name="com.example.funday.ui.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
-        android:id="@+id/navigation_notifications"
-        android:name="com.example.funday.ui.FavouritesFragment"
-        android:label="@string/favourites"
-        tools:layout="@layout/fragment_favourites" />
+        android:id="@+id/navigation_basket"
+        android:name="com.example.funday.ui.BasketFragment"
+        android:label="@string/basket"
+        tools:layout="@layout/fragment_basket" />
 </navigation>

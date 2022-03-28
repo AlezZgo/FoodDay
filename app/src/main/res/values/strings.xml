@@ -1,13 +1,13 @@
 <resources>
-    <string name="app_name">FunDay</string>
-    <string name="jokes">Jokes</string>
+    <string name="app_name">FoodDay</string>
     <string name="profile">Profile</string>
-    <string name="favourites">Favourites</string>
+    <string name="basket">Basket</string>
+    <string name="menu">Menu</string>
 
     <string-array name="countries">
-        <item>Russia</item>
-        <item>USA</item>
-        <item>France</item>
-        <item>England</item>
+        <item>Paris</item>
+        <item>Berlin</item>
+        <item>Moscow</item>
+        <item>London</item>
     </string-array>
 </resources>
