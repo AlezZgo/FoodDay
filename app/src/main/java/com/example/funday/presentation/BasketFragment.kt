@@ -1,4 +1,4 @@
-package com.example.funday.ui
+package com.example.funday.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater

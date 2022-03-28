@@ -1,21 +1,20 @@
-package com.example.funday.ui.menu
+package com.example.funday.presentation
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.funday.databinding.FragmentMenuBinding
+import com.example.funday.databinding.FragmentProfileBinding
 
-class MenuFragment : Fragment() {
+class ProfileFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        val binding = FragmentMenuBinding.inflate(inflater, container, false)
-        return binding.root
+        return FragmentProfileBinding.inflate(inflater, container, false).root
     }
 
 }

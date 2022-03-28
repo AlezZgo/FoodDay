@@ -1,4 +1,4 @@
-package com.example.funday.ui.menu
+package com.example.funday.presentation.menu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
