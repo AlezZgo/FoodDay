@@ -1,4 +1,4 @@
-package com.example.funday.ui.home
+package com.example.funday.ui.jokes
 
 import android.os.Bundle
 import android.view.LayoutInflater

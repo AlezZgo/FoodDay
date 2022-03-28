@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.funday.ui.home.JokesFragment"
+        android:name="com.example.funday.ui.jokes.JokesFragment"
         android:label="@string/jokes"
         tools:layout="@layout/fragment_jokes" />
 
