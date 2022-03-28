@@ -3,6 +3,7 @@
     package="com.example.funday">
 
     <application
+        android:name=".core.FoodDayApp"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
