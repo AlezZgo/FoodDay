@@ -3,6 +3,16 @@
     <string name="profile">Profile</string>
     <string name="basket">Basket</string>
     <string name="menu">Menu</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="pasta">Pasta</string>
+    <string name="seafood">Seafood</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="dessert">Dessert</string>
+    <string name="miscellaneous">Miscellaneous</string>
+    <string name="vine">Vine</string>
+    <string name="scan_qr_button">scan qr button</string>
+    <string name="chicken">Chicken</string>
+    <string name="sandwich">Sandwich</string>
 
     <string-array name="countries">
         <item>Paris</item>

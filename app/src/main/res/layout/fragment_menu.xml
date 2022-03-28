@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -19,7 +17,7 @@
             app:layout_scrollFlags="scroll|enterAlways">
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/counries_spinner"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:entries="@array/countries"
@@ -29,14 +27,15 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/scan_qr_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:backgroundTint="#00000000"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24" />
+                app:srcCompat="@drawable/ic_baseline_qr_code_scanner_24"
+                android:contentDescription="@string/scan_qr_button" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -51,39 +50,44 @@
                 android:background="@color/white">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/vine_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/food1" />
+                    app:srcCompat="@drawable/food1"
+                    android:contentDescription="@string/vine" />
 
                 <ImageView
-                    android:id="@+id/imageView9"
+                    android:id="@+id/dessert_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/food2" />
+                    app:srcCompat="@drawable/food2"
+                    android:contentDescription="@string/dessert" />
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/pasta_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/food3" />
+                    app:srcCompat="@drawable/food3"
+                    android:contentDescription="@string/pasta" />
 
                 <ImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/chicken_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/food4" />
+                    app:srcCompat="@drawable/food4"
+                    android:contentDescription="@string/chicken" />
 
                 <ImageView
-                    android:id="@+id/imageView12"
+                    android:id="@+id/sandwich_imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    app:srcCompat="@drawable/food5" />
+                    app:srcCompat="@drawable/food5"
+                    android:contentDescription="@string/sandwich" />
 
             </LinearLayout>
         </HorizontalScrollView>
@@ -98,71 +102,50 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/breakfast"
-                android:text="Breakfast" />
+                android:text="@string/breakfast" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/pasta"
-                android:text="Pasta" />
+                android:text="@string/pasta" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/seafood"
-                android:text="Seafood" />
+                android:text="@string/seafood" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/vegetarian"
-                android:text="Vegetarian" />
+                android:text="@string/vegetarian" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/dessert"
-                android:text="Dessert" />
+                android:text="@string/dessert" />
 
             <com.google.android.material.tabs.TabItem
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/miscellaneous"
-                android:text="Miscellaneous" />
+                android:text="@string/miscellaneous" />
         </com.google.android.material.tabs.TabLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button2"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/button3"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
