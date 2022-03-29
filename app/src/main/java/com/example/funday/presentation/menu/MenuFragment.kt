@@ -28,11 +28,9 @@ class MenuFragment :
     private fun setUpAdapter() {
         val adapter = MealAdapter()
         binding.menuRecyclerView.adapter = adapter
-//        viewModel.meals.observe(viewLifecycleOwner){
-//            adapter.submitList(
-//                it
-//            )
-//        }
+        viewModel.meals.observe(viewLifecycleOwner){
+            adapter.submitList(it)
+        }
 
     }
 

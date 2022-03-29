@@ -15,14 +15,11 @@ class MenuViewModel @Inject constructor(
     private val interactor: MealInteractor,
 ) : ViewModel() {
 
-    lateinit var meals: LiveData<List<MealDomain>>
+    val meals = interactor.fetchMeals(MealCategory.BREAKFAST)
 
     init {
         CoroutineScope(Dispatchers.IO + Job()).launch {
-
-            meals = interactor.fetchMeals(MealCategory.DESSERT)
-
-
+            interactor.download()
         }
     }
 

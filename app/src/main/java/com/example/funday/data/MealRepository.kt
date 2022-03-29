@@ -10,15 +10,16 @@ import com.example.funday.domain.MealDomain
 import javax.inject.Inject
 
 interface MealRepository {
-    suspend fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>>
 
-    suspend fun insert()
+    suspend fun download()
+
+    fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>>
 
     class Base @Inject constructor(
         private val cacheDataSource: CacheDataSource,
         private val cloudDataSource: CloudDataSource,
     ) : MealRepository {
-        override suspend fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>> {
+        override suspend fun download() {
             if (cacheDataSource.cacheIsEmpty()) {
                 MealCategory.values().forEach {mealCategory->
                     cloudDataSource.downloadMeals(mealCategory).meals.forEach {
@@ -26,16 +27,15 @@ interface MealRepository {
                     }
                 }
             }
+        }
+
+        override fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>> {
             return Transformations.map(cacheDataSource.fetchMeals()) { list ->
                 list.map {
                     it.toDomain()
                 }
             }
 
-        }
-
-        override suspend fun insert() {
-            cacheDataSource.insertMeal(MealCache("One","https://minecraft-statistic.net/img/screen/icon/146237.png",MealCategory.DESSERT))
         }
 
     }

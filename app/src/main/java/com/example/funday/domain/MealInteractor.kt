@@ -6,11 +6,17 @@ import javax.inject.Inject
 
 interface MealInteractor {
 
-    suspend fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>>
+    fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>>
+
+    suspend fun download()
 
     class Base @Inject constructor(private val repository: MealRepository) : MealInteractor {
-        override suspend fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>> {
+        override fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>> {
             return repository.fetchMeals(category)
+        }
+
+        override suspend fun download() {
+            repository.download()
         }
 
     }
