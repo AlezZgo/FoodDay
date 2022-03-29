@@ -1,8 +1,7 @@
 package com.example.funday.data.cloud
 
-import com.example.funday.data.cloud.MealsCloud
-import okhttp3.MultipartBody
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface MealsApiService {
 

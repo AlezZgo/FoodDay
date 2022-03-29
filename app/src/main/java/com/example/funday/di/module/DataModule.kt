@@ -1,8 +1,12 @@
+package com.example.funday.di.module
+
 import android.app.Application
 import com.example.funday.data.MealRepository
+import com.example.funday.data.cache.AppDatabase
 import com.example.funday.data.cache.CacheDataSource
 import com.example.funday.data.cache.MealDao
 import com.example.funday.data.cloud.CloudDataSource
+import com.example.funday.di.ApplicationScope
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -22,7 +26,7 @@ interface DataModule {
             cacheDataSource: CacheDataSource,
             cloudDataSource: CloudDataSource,
         ): MealRepository.Base {
-            return MealRepository.Base(cacheDataSource,cloudDataSource)
+            return MealRepository.Base(cacheDataSource, cloudDataSource)
         }
 
         @ApplicationScope
@@ -32,7 +36,6 @@ interface DataModule {
         ): CacheDataSource {
             return CacheDataSource.Base(mealDao)
         }
-
 
 
         @ApplicationScope

@@ -9,14 +9,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
-import java.util.*
 import javax.inject.Inject
 
 class MenuViewModel @Inject constructor(
     private val interactor: MealInteractor,
 ) : ViewModel() {
 
-    lateinit var meals : LiveData<List<MealDomain>>
+    lateinit var meals: LiveData<List<MealDomain>>
 
     init {
         CoroutineScope(Dispatchers.IO + Job()).launch {

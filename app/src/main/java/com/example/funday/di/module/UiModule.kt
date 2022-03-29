@@ -1,11 +1,11 @@
+package com.example.funday.di.module
+
 import androidx.lifecycle.ViewModel
-import com.example.funday.data.MealRepository
-import com.example.funday.domain.MealInteractor
+import com.example.funday.di.ViewModelKey
 import com.example.funday.presentation.menu.MenuViewModel
 import com.example.funday.presentation.menu.OnTabClickHandler
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.multibindings.IntoMap
 
 @Module

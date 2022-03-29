@@ -1,14 +1,13 @@
 package com.example.funday.presentation.menu
 
 import com.example.funday.domain.MealCategory
-import java.lang.RuntimeException
 import javax.inject.Inject
 
 interface OnTabClickHandler {
 
     fun handle(position: Int): MealCategory
 
-    class Base@Inject constructor(): OnTabClickHandler{
+    class Base @Inject constructor() : OnTabClickHandler {
         override fun handle(position: Int): MealCategory {
             return when (position) {
                 0 -> MealCategory.BREAKFAST

@@ -1,9 +1,9 @@
-import com.example.funday.data.cache.MealCache
+package com.example.funday.data.cache
+
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.funday.data.cache.MealDao
 
 @Database(entities = [MealCache::class], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {

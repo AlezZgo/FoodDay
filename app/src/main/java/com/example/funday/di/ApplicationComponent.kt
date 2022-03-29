@@ -1,5 +1,11 @@
+package com.example.funday.di
+
 import android.app.Application
 import com.example.funday.core.FoodDayApp
+import com.example.funday.di.module.DataModule
+import com.example.funday.di.module.DomainModule
+import com.example.funday.di.module.NetModule
+import com.example.funday.di.module.UiModule
 import com.example.funday.presentation.BasketFragment
 import com.example.funday.presentation.MainActivity
 import com.example.funday.presentation.ProfileFragment

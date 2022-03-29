@@ -1,5 +1,8 @@
+package com.example.funday.di.module
+
 import com.example.funday.data.cloud.CloudDataSource
 import com.example.funday.data.cloud.MealsApiService
+import com.example.funday.di.ApplicationScope
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

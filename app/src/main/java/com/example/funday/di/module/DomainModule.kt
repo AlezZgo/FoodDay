@@ -1,4 +1,7 @@
+package com.example.funday.di.module
+
 import com.example.funday.data.MealRepository
+import com.example.funday.di.ApplicationScope
 import com.example.funday.domain.MealInteractor
 import dagger.Binds
 import dagger.Module

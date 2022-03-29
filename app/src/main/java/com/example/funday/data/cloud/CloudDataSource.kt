@@ -9,7 +9,7 @@ interface CloudDataSource {
         category: MealCategory,
     ): MealsCloud
 
-    class Base@Inject constructor(private val service: MealsApiService) : CloudDataSource {
+    class Base @Inject constructor(private val service: MealsApiService) : CloudDataSource {
         override suspend fun downloadMeals(category: MealCategory): MealsCloud {
 
             return service.loadData(category.toString())
