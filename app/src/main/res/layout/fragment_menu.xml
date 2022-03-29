@@ -100,36 +100,42 @@
             app:tabMode="scrollable">
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/breakfast_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/breakfast"
                 android:text="@string/breakfast" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/pasta_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/pasta"
                 android:text="@string/pasta" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/seafood_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/seafood"
                 android:text="@string/seafood" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/vegetarian_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/vegetarian"
                 android:text="@string/vegetarian" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/dessert_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/dessert"
                 android:text="@string/dessert" />
 
             <com.google.android.material.tabs.TabItem
+                android:id="@+id/miscellaneous_tab"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:icon="@drawable/miscellaneous"

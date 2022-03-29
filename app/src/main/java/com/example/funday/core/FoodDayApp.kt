@@ -1,6 +1,7 @@
 package com.example.funday.core
 
 import android.app.Application
+import com.example.funday.di.DaggerApplicationComponent
 
 class FoodDayApp : Application() {
 

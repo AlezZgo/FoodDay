@@ -1,3 +1,5 @@
+package com.example.funday.presentation.menu.adapter
+
 import androidx.recyclerview.widget.DiffUtil
 import com.example.funday.domain.MealDomain
 

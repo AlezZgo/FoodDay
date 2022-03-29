@@ -1,3 +1,5 @@
+package com.example.funday.di
+
 import javax.inject.Scope
 
 @Scope

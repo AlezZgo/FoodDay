@@ -1,5 +1,11 @@
+package com.example.funday.di
+
 import android.app.Application
 import com.example.funday.core.FoodDayApp
+import com.example.funday.di.module.DataModule
+import com.example.funday.di.module.DomainModule
+import com.example.funday.di.module.NetModule
+import com.example.funday.di.module.UiModule
 import com.example.funday.presentation.BasketFragment
 import com.example.funday.presentation.MainActivity
 import com.example.funday.presentation.ProfileFragment
@@ -11,9 +17,9 @@ import dagger.Component
 @Component(
     modules = [
         DataModule::class,
-        ViewModelModule::class,
+        UiModule::class,
         DomainModule::class,
-        NetModule::class
+        NetModule::class,
     ]
 )
 
@@ -21,11 +27,11 @@ interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
 
-    fun inject(listFragment: MenuFragment)
+    fun inject(menuFragment: MenuFragment)
 
-    fun inject(descriptionFragment: ProfileFragment)
+    fun inject(profileFragment: ProfileFragment)
 
-    fun inject(createFragment: BasketFragment)
+    fun inject(basketFragment: BasketFragment)
 
     fun inject(application: FoodDayApp)
 

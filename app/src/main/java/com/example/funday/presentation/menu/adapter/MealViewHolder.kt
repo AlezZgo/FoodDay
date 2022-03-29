@@ -1,7 +1,8 @@
+package com.example.funday.presentation.menu.adapter
+
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
-import com.example.funday.R
 import com.example.funday.databinding.ItemMealBinding
 import com.example.funday.domain.MealDomain
 
