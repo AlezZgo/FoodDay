@@ -15,7 +15,7 @@ interface MealDao {
     @Query("SELECT * FROM meals ORDER BY name ASC")
     fun list(): LiveData<List<MealCache>>
 
-    @Query("SELECT count(*) FROM meals")
+    @Query("SELECT COUNT(*) FROM meals ")
     suspend fun count(): Int
 
 }

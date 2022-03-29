@@ -19,14 +19,17 @@ class MenuViewModel @Inject constructor(
 
     init {
         CoroutineScope(Dispatchers.IO + Job()).launch {
-            meals = interactor.fetchMeals(MealCategory.BREAKFAST)
+
+            meals = interactor.fetchMeals(MealCategory.DESSERT)
+
+
         }
     }
 
-    fun changeCategory(category: MealCategory) {
-        CoroutineScope(Dispatchers.IO + Job()).launch {
-            meals = interactor.fetchMeals(category)
-        }
-    }
+//    fun changeCategory(category: MealCategory) {
+//        CoroutineScope(Dispatchers.IO + Job()).launch {
+//            meals = interactor.fetchMeals(category)
+//        }
+//    }
 
 }

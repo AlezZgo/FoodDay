@@ -12,5 +12,6 @@ interface MealInteractor {
         override suspend fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>> {
             return repository.fetchMeals(category)
         }
+
     }
 }
