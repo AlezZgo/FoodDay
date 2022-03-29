@@ -15,9 +15,6 @@ import com.example.funday.domain.MealDomain
 class MenuFragment :
 BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
 
-    @Inject
-    lateinit var onTabClickHandler: OnTabClickHandler
-
     override fun onAttach(context: Context) {
         component.inject(this)
         super.onAttach(context)
