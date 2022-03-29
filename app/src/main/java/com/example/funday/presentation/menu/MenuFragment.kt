@@ -11,9 +11,13 @@ import com.example.funday.databinding.FragmentMenuBinding
 import com.example.funday.domain.MealDomain
 import com.example.funday.presentation.menu.adapter.MealAdapter
 import com.google.android.material.tabs.TabLayout
+import javax.inject.Inject
 
 class MenuFragment :
     BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
+
+    @Inject
+    lateinit var onTabClickHandler : OnTabClickHandler
 
     override fun onAttach(context: Context) {
         component.inject(this)
@@ -31,7 +35,6 @@ class MenuFragment :
     }
 
     private fun setUpOnTabClickListener() {
-        val onTabClickHandler = OnTabClickHandler.Base()
 
         binding.tabs.setOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
@@ -47,8 +50,6 @@ class MenuFragment :
 
             }
         })
-
-
 
     }
 

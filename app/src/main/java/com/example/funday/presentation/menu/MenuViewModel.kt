@@ -17,17 +17,15 @@ class MenuViewModel @Inject constructor(
     private val interactor: MealInteractor,
 ) : ViewModel() {
 
-    var meals: LiveData<List<MealDomain>>
     var filter = MutableLiveData(MealCategory.BREAKFAST)
+    var meals = Transformations.switchMap(filter) { filter ->
+        interactor.fetchMeals(filter)
+    }
 
     init {
         CoroutineScope(Dispatchers.IO + Job()).launch {
             interactor.download()
         }
-        meals = Transformations.switchMap(filter) { filter ->
-            interactor.fetchMeals(filter)
-        }
-
     }
 
     fun setFilter(newFilter: MealCategory) {
