@@ -34,7 +34,7 @@ BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
         adapter.submitList(
             listOf(
                 MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+                MealDomain("Sea","https://www.themealdb.com/images/media/meals/xxrxux1503070723.jpg"),
                 MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
                 MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
                 MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
