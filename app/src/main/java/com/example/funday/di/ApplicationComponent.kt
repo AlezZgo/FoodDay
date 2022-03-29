@@ -11,9 +11,9 @@ import dagger.Component
 @Component(
     modules = [
         DataModule::class,
-        ViewModelModule::class,
+        UiModule::class,
         DomainModule::class,
-        NetModule::class
+        NetModule::class,
     ]
 )
 
@@ -21,11 +21,11 @@ interface ApplicationComponent {
 
     fun inject(activity: MainActivity)
 
-    fun inject(listFragment: MenuFragment)
+    fun inject(menuFragment: MenuFragment)
 
-    fun inject(descriptionFragment: ProfileFragment)
+    fun inject(profileFragment: ProfileFragment)
 
-    fun inject(createFragment: BasketFragment)
+    fun inject(basketFragment: BasketFragment)
 
     fun inject(application: FoodDayApp)
 

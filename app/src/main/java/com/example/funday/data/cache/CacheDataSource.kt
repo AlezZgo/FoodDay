@@ -1,6 +1,7 @@
 import MealCache
 import MealDao
 import androidx.lifecycle.LiveData
+import javax.inject.Inject
 
 interface CacheDataSource {
     fun fetchMeals(): LiveData<List<MealCache>>
@@ -9,7 +10,7 @@ interface CacheDataSource {
 
     suspend fun cacheIsEmpty(): Boolean
 
-    class Base(private val mealDao: MealDao) : CacheDataSource {
+    class Base@Inject constructor(private val mealDao: MealDao) : CacheDataSource {
         override fun fetchMeals(): LiveData<List<MealCache>> {
             return mealDao.list()
         }

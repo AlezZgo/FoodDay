@@ -30,12 +30,14 @@ interface DataModule {
             return CacheDataSource.Base(mealDao)
         }
 
+
+
         @ApplicationScope
         @Provides
         fun provideCacheDao(
             application: Application,
         ): MealDao {
-            return AppDatabase.instance(application).qrCodeDao()
+            return AppDatabase.instance(application).mealDao()
         }
 
     }

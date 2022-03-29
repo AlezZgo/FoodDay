@@ -11,9 +11,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.funday.core.BaseFragment
 import com.example.funday.databinding.FragmentMenuBinding
 import com.example.funday.domain.MealDomain
+import javax.inject.Inject
 
 class MenuFragment :
 BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
+
+    @Inject
+    lateinit var onTabClickHandler: OnTabClickHandler
 
     override fun onAttach(context: Context) {
         component.inject(this)
@@ -26,27 +30,27 @@ BaseFragment<FragmentMenuBinding, MenuViewModel>(FragmentMenuBinding::inflate) {
         viewModel = ViewModelProvider(this, viewModelFactory)[MenuViewModel::class.java]
 
         setUpAdapter()
+
+        setUpTabBarClickListener()
+    }
+
+    private fun setUpTabBarClickListener() {
+        binding.tabs.apply {
+            setOnClickListener {
+                viewModel.changeCategory(onTabClickHandler.handle(selectedTabPosition))
+            }
+        }
     }
 
     private fun setUpAdapter() {
         val adapter = MealAdapter()
         binding.menuRecyclerView.adapter = adapter
-        adapter.submitList(
-            listOf(
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Sea","https://www.themealdb.com/images/media/meals/xxrxux1503070723.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
-                MealDomain("Beef","https://www.themealdb.com//images//media//meals//uvuyxu1503067369.jpg"),
+        viewModel.meals.observe(viewLifecycleOwner){
+            adapter.submitList(
+                it
             )
-        )
+        }
+
     }
 
 }

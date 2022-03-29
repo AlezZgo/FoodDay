@@ -1,5 +1,6 @@
 import com.example.funday.data.cloud.MealsCloud
 import com.example.funday.domain.MealCategory
+import javax.inject.Inject
 
 interface CloudDataSource {
 
@@ -7,7 +8,7 @@ interface CloudDataSource {
         category: MealCategory,
     ): MealsCloud
 
-    class Base(private val service: MealsApiService) : CloudDataSource {
+    class Base@Inject constructor(private val service: MealsApiService) : CloudDataSource {
         override suspend fun downloadMeals(category: MealCategory): MealsCloud {
 
             return service.loadData(category.toString())

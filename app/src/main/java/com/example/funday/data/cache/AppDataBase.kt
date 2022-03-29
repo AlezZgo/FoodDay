@@ -28,5 +28,5 @@ abstract class AppDatabase : RoomDatabase() {
         }
     }
 
-    abstract fun qrCodeDao(): MealDao
+    abstract fun mealDao(): MealDao
 }
