@@ -1,5 +1,8 @@
 import android.app.Application
 import com.example.funday.data.MealRepository
+import com.example.funday.data.cache.CacheDataSource
+import com.example.funday.data.cache.MealDao
+import com.example.funday.data.cloud.CloudDataSource
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

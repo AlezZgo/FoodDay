@@ -1,3 +1,5 @@
+package com.example.funday.data.cache
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.example.funday.domain.MealCategory

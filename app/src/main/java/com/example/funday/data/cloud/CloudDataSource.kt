@@ -1,4 +1,5 @@
-import com.example.funday.data.cloud.MealsCloud
+package com.example.funday.data.cloud
+
 import com.example.funday.domain.MealCategory
 import javax.inject.Inject
 

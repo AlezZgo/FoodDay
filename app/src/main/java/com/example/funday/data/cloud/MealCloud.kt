@@ -1,6 +1,6 @@
 package com.example.funday.data.cloud
 
-import MealCache
+import com.example.funday.data.cache.MealCache
 import com.example.funday.domain.MealCategory
 import com.google.gson.annotations.SerializedName
 

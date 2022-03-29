@@ -1,3 +1,5 @@
+package com.example.funday.data.cloud
+
 import com.example.funday.data.cloud.MealsCloud
 import okhttp3.MultipartBody
 import retrofit2.http.*

@@ -1,7 +1,7 @@
 package com.example.funday.data
 
-import CacheDataSource
-import CloudDataSource
+import com.example.funday.data.cache.CacheDataSource
+import com.example.funday.data.cloud.CloudDataSource
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import com.example.funday.domain.MealCategory

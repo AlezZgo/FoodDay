@@ -1,5 +1,5 @@
-import MealCache
-import MealDao
+package com.example.funday.data.cache
+
 import androidx.lifecycle.LiveData
 import javax.inject.Inject
 
@@ -10,7 +10,7 @@ interface CacheDataSource {
 
     suspend fun cacheIsEmpty(): Boolean
 
-    class Base@Inject constructor(private val mealDao: MealDao) : CacheDataSource {
+    class Base @Inject constructor(private val mealDao: MealDao) : CacheDataSource {
         override fun fetchMeals(): LiveData<List<MealCache>> {
             return mealDao.list()
         }
@@ -20,7 +20,7 @@ interface CacheDataSource {
         }
 
         override suspend fun cacheIsEmpty(): Boolean {
-            return mealDao.count()<=0
+            return mealDao.count() <= 0
         }
 
     }

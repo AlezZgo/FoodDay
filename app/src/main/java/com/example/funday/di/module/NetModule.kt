@@ -1,3 +1,5 @@
+import com.example.funday.data.cloud.CloudDataSource
+import com.example.funday.data.cloud.MealsApiService
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
