@@ -47,7 +47,7 @@ interface NetModule {
             return retrofit.create(MealsApiService::class.java)
         }
 
-        private const val baseUrl = "www.themealdb.com/"
+        private const val baseUrl = "https://www.themealdb.com/"
 
     }
 }
