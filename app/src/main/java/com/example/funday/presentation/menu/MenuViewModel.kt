@@ -1,6 +1,8 @@
 package com.example.funday.presentation.menu
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.funday.domain.MealCategory
 import com.example.funday.domain.MealDomain
@@ -15,18 +17,21 @@ class MenuViewModel @Inject constructor(
     private val interactor: MealInteractor,
 ) : ViewModel() {
 
-    val meals = interactor.fetchMeals(MealCategory.BREAKFAST)
+    var meals: LiveData<List<MealDomain>>
+    var filter = MutableLiveData(MealCategory.BREAKFAST)
 
     init {
         CoroutineScope(Dispatchers.IO + Job()).launch {
             interactor.download()
         }
+        meals = Transformations.switchMap(filter) { filter ->
+            interactor.fetchMeals(filter)
+        }
+
     }
 
-//    fun changeCategory(category: MealCategory) {
-//        CoroutineScope(Dispatchers.IO + Job()).launch {
-//            meals = interactor.fetchMeals(category)
-//        }
-//    }
+    fun setFilter(newFilter: MealCategory) {
+        filter.postValue(newFilter)
+    }
 
 }

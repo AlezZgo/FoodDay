@@ -1,18 +1,19 @@
 package com.example.funday.data.cache
 
 import androidx.lifecycle.LiveData
+import com.example.funday.domain.MealCategory
 import javax.inject.Inject
 
 interface CacheDataSource {
-    fun fetchMeals(): LiveData<List<MealCache>>
+    fun fetchMeals(category: MealCategory): LiveData<List<MealCache>>
 
     suspend fun insertMeal(mealCache: MealCache)
 
     suspend fun cacheIsEmpty(): Boolean
 
     class Base @Inject constructor(private val mealDao: MealDao) : CacheDataSource {
-        override fun fetchMeals(): LiveData<List<MealCache>> {
-            return mealDao.list()
+        override fun fetchMeals(category: MealCategory): LiveData<List<MealCache>> {
+            return mealDao.list(category)
         }
 
         override suspend fun insertMeal(meal: MealCache) {

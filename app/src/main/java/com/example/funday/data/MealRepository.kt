@@ -30,7 +30,7 @@ interface MealRepository {
         }
 
         override fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>> {
-            return Transformations.map(cacheDataSource.fetchMeals()) { list ->
+            return Transformations.map(cacheDataSource.fetchMeals(category)) { list ->
                 list.map {
                     it.toDomain()
                 }
