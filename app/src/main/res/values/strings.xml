@@ -13,6 +13,11 @@
     <string name="scan_qr_button">scan qr button</string>
     <string name="chicken">Chicken</string>
     <string name="sandwich">Sandwich</string>
+    <string name="burger_banner">Burger banner</string>
+    <string name="pizza_banner">Pizza banner</string>
+    <string name="sushi_banner">Sushi_banner</string>
+    <string name="kebab_banner">kebab_banner</string>
+    <string name="veg_banner">vegetarian banner</string>
 
     <string-array name="countries">
         <item>Paris</item>
