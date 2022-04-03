@@ -17,8 +17,9 @@ class MenuViewModel @Inject constructor(
     private val interactor: MealInteractor,
 ) : ViewModel() {
 
-    var filter = MutableLiveData(MealCategory.BREAKFAST)
-    var meals = Transformations.switchMap(filter) { filter ->
+    private val filter = MutableLiveData(MealCategory.BREAKFAST)
+
+    val meals = Transformations.switchMap(filter) { filter ->
         interactor.fetchMeals(filter)
     }
 
