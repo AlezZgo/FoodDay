@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 interface MealRepository {
 
-    suspend fun download()
+    suspend fun downloadIfCacheIsEmpty()
 
     fun fetchMeals(category: MealCategory): LiveData<List<MealDomain>>
 
@@ -19,7 +19,7 @@ interface MealRepository {
         private val cacheDataSource: CacheDataSource,
         private val cloudDataSource: CloudDataSource,
     ) : MealRepository {
-        override suspend fun download() {
+        override suspend fun downloadIfCacheIsEmpty() {
             if (cacheDataSource.cacheIsEmpty()) {
                 MealCategory.values().forEach {mealCategory->
                     cloudDataSource.downloadMeals(mealCategory).meals.forEach {

@@ -16,7 +16,7 @@ interface MealInteractor {
         }
 
         override suspend fun download() {
-            repository.download()
+            repository.downloadIfCacheIsEmpty()
         }
 
     }
