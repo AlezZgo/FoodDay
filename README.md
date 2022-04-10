@@ -2,7 +2,7 @@
 
 Test task solution!
 
-[Test task](https://user-images.githubusercontent.com/72276469/156880603-cbeb45cc-e5e3-4141-802c-401f11dd30c0.jpg)
+[Test task](https://docs.google.com/document/u/0/d/1DGTNxuDqqxOytIUBvCwtJ8IPv-LY9K6DqDRno2DMIK0/mobilebasic)
 
 It starts with awesome ui like id dodo pizza app
 
